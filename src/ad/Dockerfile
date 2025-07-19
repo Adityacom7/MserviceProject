@@ -1,8 +1,9 @@
 FROM eclipse-temurin:21-jdk-alpine AS builder
 WORKDIR /usr/src/app/
 COPY . .
+COPY ./pb ./proto
 RUN chmod +x gradlew 
-RUN ./gradlew installDist -PprotoSourceDir=./pb/demo.proto
+RUN ./gradlew installDist -PprotoSourceDir=./proto
 FROM alpine AS release
 WORKDIR /usr/src/app/   
 COPY --from=builder /usr/src/app/src/ad/build/install/oteldemo/bin/Ad .
