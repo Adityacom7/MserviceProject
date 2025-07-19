@@ -1,4 +1,4 @@
-FROM eclipse-eclipse-temurin:21-jdk-alpine AS builder
+FROM eclipse-temurin:21-jdk-alpine AS builder
 WORKDIR usr/src/app/
 COPY . .
 RUN ./gradlew build
