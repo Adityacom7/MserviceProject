@@ -7,7 +7,7 @@ FROM alpine AS release
 WORKDIR /usr/src/app/
 
 COPY ./products ./products
-COPY --from=builder /go/bin/product-catalog ./
+COPY --from=builder /usr/bin/product-catalog ./
 
 EXPOSE $(PRODUCT_CATALOG_PORT)
 ENTRYPOINT [ "./product-catalog" ]
