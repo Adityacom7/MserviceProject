@@ -2,7 +2,10 @@ FROM eclipse-temurin:21-jdk-alpine AS builder
 WORKDIR /usr/src/app/
 COPY . .
 COPY ./pb ./proto
-RUN chmod +x gradlew 
+RUN chmod +x gradlew
+RUN ./gradlew 
+RUN ./gradlew downloadrepos 
+RUN chmod +x ./proto
 RUN ./gradlew installDist -PprotoSourceDir=./proto
 FROM eclipse-temurin:21-jre AS release
 WORKDIR /usr/src/app/   
