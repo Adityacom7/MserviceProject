@@ -1,5 +1,5 @@
 FROM eclipse-temurin:21-jdk-alpine AS builder
-WORKDIR usr/src/app/
+WORKDIR /usr/src/app/
 COPY . .
 RUN chmod +x gradlew 
 RUN ./gradlew installDist
