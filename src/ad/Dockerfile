@@ -4,7 +4,7 @@ COPY . .
 COPY ./pb ./proto
 RUN chmod +x gradlew 
 RUN ./gradlew installDist -PprotoSourceDir=./proto
-FROM eclipse-temurin:21-jre-alpine AS release
+FROM eclipse-temurin:21-jre AS release
 WORKDIR /usr/src/app/   
 COPY --from=builder /usr/src/app/src/ad/build/install/oteldemo/bin/Ad .
 ENV AD_PORT=8080
