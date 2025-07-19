@@ -10,7 +10,7 @@ compile/install/distribute. Gradle wrapper is already part of the source code.
 To build Ad Service, run:
 
 ```sh
-./gradlew installDist
+./gradlew installDistd  
 
 <or>
 
