@@ -5,7 +5,7 @@ COPY ./pb ./proto
 RUN chmod +x gradlew
 RUN ./gradlew 
 RUN ./gradlew downloadrepos 
-RUN chmod +x ./proto
+RUN chmod +x ./gradlew
 RUN ./gradlew installDist -PprotoSourceDir=./proto
 FROM eclipse-temurin:21-jre AS release
 WORKDIR /usr/src/app/   
