@@ -9,5 +9,5 @@ WORKDIR /usr/src/app/
 COPY ./products ./products
 COPY --from=builder /usr/bin/product-catalog ./
 
-EXPOSE $(PRODUCT_CATALOG_PORT)
+ENV PRODUCT_CATALOG_PORT=8088
 ENTRYPOINT [ "./product-catalog" ]
