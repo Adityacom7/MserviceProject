@@ -14,7 +14,7 @@ To build Ad Service, run:
 
 <or>
 
-./gradlew installDist -PprotoSourceDir=./proto
+./gradlew installDist -PprotoSourceDir=./pb
 ```
 
 It will create an executable script
