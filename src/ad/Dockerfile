@@ -5,7 +5,6 @@ RUN ./gradlew build
 FROM alpine AS release
 WORKDIR /usr/src/app/   
 COPY --from=builder /usr/src/app/src/ad/build/install/oteldemo/bin/Ad .
-COPY ./ad ./ad
 ENV AD_PORT=8080
 ENV FEATURE_FLAG_GRPC_SERVICE_ADDR=eatureflagservice:50053
 ENTRYPOINT [ "./build/install/opentelemetry-demo-ad/bin/Ad" ]
