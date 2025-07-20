@@ -8,7 +8,7 @@ selected product.
 To build the protos, run from the root directory:
 
 ```sh
-make docker-generate-protobuf
+
 ```
 
 ## Docker Build
