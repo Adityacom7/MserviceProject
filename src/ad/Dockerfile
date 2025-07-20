@@ -10,7 +10,7 @@ RUN ./gradlew installDist -PprotoSourceDir=./proto
 FROM eclipse-temurin:21-jre AS release
 WORKDIR /usr/src/app/   
 
-COPY --from=builder /usr/src/app/build/install/opentelemetry-demo-ad ./opentelemetry-demo-ad
+COPY --from=builder /usr/src/app/ ./
 ENV AD_PORT=8080
 ENV FEATURE_FLAG_GRPC_SERVICE_ADDR=eatureflagservice:50053
-ENTRYPOINT [ "./opentelemetry-demo-ad/bin/ad" ]
+ENTRYPOINT [ "./build/install/opentelemetry-demo-ad/bin/Ad" ]
