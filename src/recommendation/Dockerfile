@@ -4,4 +4,4 @@ COPY requirements.txt ./
 RUN pip install --upgrade pip
 RUN  pip install -r requirements.txt
 COPY . .
-ENTRYPOINT [ "python","recommendation_server.py" ]
+CMD [ "python","recommendation_server.py" ]
