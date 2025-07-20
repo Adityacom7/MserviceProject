@@ -20,9 +20,11 @@ FROM eclipse-temurin:21-jre
 
 WORKDIR /usr/src/app/
 
+COPY --from=builder /usr/src/app/build/install/opentelemetry-demo-ad ./opentelemetry-demo-ad
+
 COPY --from=builder /usr/src/app/ ./
 
 ENV AD_PORT 9099
 
-ENTRYPOINT ["./build/install/opentelemetry-demo-ad/bin/Ad"]
+ENTRYPOINT ["./opentelemetry-demo-ad/bin/Ad"]
 
